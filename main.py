@@ -4,37 +4,49 @@ from bubble_sort import bubble_sort
 from insertion_sort import insertion_sort
 from selection_sort import selection_sort
 
-x = int(input("Enter size of the array"))
+sizes = [1000, 2500, 5000,10000,20000]
 
-arr = []
+insertion_times = []
+selection_times = []
+bubble_times = []
 
-for i in range(x):
-    arr.append(random.randint(0,100000))
+for size in sizes:
 
-arr_2 = arr.copy()
-arr_3 = arr.copy()
+    arr = []
 
-start_time = datetime.now()
-bubble_sort(arr)
-end_time = datetime.now()
+    for i in range(size):
+        arr.append(random.randint(0,100000))
 
-difference = (end_time-start_time).total_seconds() *1000
+    arr_2 = arr.copy()
+    arr_3 = arr.copy()
 
-print(f"Running time for Bubble Sort is {difference} ms")
+    start_time = datetime.now()
+    bubble_sort(arr)
+    end_time = datetime.now()
 
-start_time = datetime.now()
-insertion_sort(arr)
-end_time = datetime.now()
+    difference = (end_time-start_time).total_seconds() *1000
 
-difference = (end_time-start_time).total_seconds() *1000
+    bubble_times.append(difference)
 
-print(f"Running time for Bubble Sort is {difference} ms")
+    print(f"Running time for Bubble Sort is {difference} ms")
 
-start_time = datetime.now()
-selection_sort(arr)
-end_time = datetime.now()
+    start_time = datetime.now()
+    insertion_sort(arr_1)
+    end_time = datetime.now()
 
-difference = (end_time-start_time).total_seconds() *1000
+    difference = (end_time-start_time).total_seconds() *1000
 
-print(f"Running time for Bubble Sort is {difference} ms")
+    insertion_times.append(difference)
+
+    print(f"Running time for Insertion Sort is {difference} ms")
+
+    start_time = datetime.now()
+    selection_sort(arr_2)
+    end_time = datetime.now()
+
+    difference = (end_time-start_time).total_seconds() *1000
+
+    selection_times.append(difference)
+
+    print(f"Running time for Selection Sort is {difference} ms")
 
