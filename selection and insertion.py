@@ -17,8 +17,3 @@ def insertion_sort(arr,n):
          arr[j]=arr[j-1]
          j-=1  
          arr[j]=key 
-
-
-arr = [39, 10, 14, 40, 13]
-insertion_sort(arr, len(arr))
-print(f"sorted list {arr}")
