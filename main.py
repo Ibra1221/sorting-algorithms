@@ -2,6 +2,7 @@ from datetime import datetime
 import random
 from bubble_sort import bubble_sort
 from selection_and_insertion import insertion_sort, selection_sort
+import matplotlib.pyplot as plt
 
 sizes = [1000, 2500, 5000,10000,20000]
 
@@ -49,3 +50,11 @@ for size in sizes:
 
     print(f"Running time for Selection Sort is {difference} ms")
 
+plt.plot(sizes, bubble_times, marker='o', label="Bubble")
+plt.plot(sizes, insertion_times, marker='o', label="Insertion")
+plt.plot(sizes, selection_times, marker='o', label="Selection")
+
+plt.xlabel("Array Size")
+plt.ylabel("Time (ms)")
+plt.legend()
+plt.show()
