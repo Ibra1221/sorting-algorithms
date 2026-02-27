@@ -1,8 +1,7 @@
 from datetime import datetime
 import random
 from bubble_sort import bubble_sort
-from insertion_sort import insertion_sort
-from selection_sort import selection_sort
+from selection_and_insertion import insertion_sort, selection_sort
 
 sizes = [1000, 2500, 5000,10000,20000]
 
@@ -31,7 +30,7 @@ for size in sizes:
     print(f"Running time for Bubble Sort is {difference} ms")
 
     start_time = datetime.now()
-    insertion_sort(arr_1)
+    insertion_sort(arr_2, len(arr_2))
     end_time = datetime.now()
 
     difference = (end_time-start_time).total_seconds() *1000
@@ -41,7 +40,7 @@ for size in sizes:
     print(f"Running time for Insertion Sort is {difference} ms")
 
     start_time = datetime.now()
-    selection_sort(arr_2)
+    selection_sort(arr_3, len(arr_3 ))
     end_time = datetime.now()
 
     difference = (end_time-start_time).total_seconds() *1000
