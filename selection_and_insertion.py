@@ -13,12 +13,13 @@ def selection_sort(arr,n):
 def insertion_sort(arr, n):
     for i in range(1, n):
         key = arr[i]
-        j = i - 1
+        j = i
         
-        while (j >= 0 and arr[j] > key):
-            arr[j + 1] = arr[j]
+        while (j >0 and arr[j-1] > key):
+            arr[j] = arr[j-1]
             j -= 1
         
-        arr[j + 1] = key
+        arr[j] = key
     
     return arr
+
