@@ -4,9 +4,10 @@ from bubble_sort import bubble_sort
 from selection_and_insertion import insertion_sort, selection_sort
 from sorting2 import quick_sort, heap_sort, merge_sort
 import matplotlib.pyplot as plt
+from hybrid_sort import hybrid_sort
 
+sizes = [100,500,1000,2000,3000]
 
-sizes = [1000,5000,10000,20000,30000]
 
 insertion_times = []
 selection_times = []
@@ -14,6 +15,7 @@ bubble_times = []
 quick_times = []
 heap_times = []
 merge_times = []
+hybrid_times = []
 
 for size in sizes:
 
@@ -27,6 +29,7 @@ for size in sizes:
     arr_4 = arr.copy()
     arr_5 = arr.copy()
     arr_6 = arr.copy()
+    arr_7 = arr.copy()
 
     start_time = datetime.now()
     bubble_sort(arr)
@@ -82,6 +85,14 @@ for size in sizes:
     merge_times.append(difference)
     print(f"Running time for Merge Sort is {difference} ms")
     
+    #print(arr_7)
+    start_time = datetime.now()
+    hybrid_sort(arr_7, 0, len(arr_7) - 1, 6)
+    #print(arr_7)
+    end_time = datetime.now()
+    difference = (end_time-start_time).total_seconds() *1000
+    hybrid_times.append(difference)
+    print(f"Running time for Hybrid Sort is {difference} ms")
 
 
 plt.plot(sizes, bubble_times, marker='o', label="Bubble")
@@ -90,7 +101,7 @@ plt.plot(sizes, selection_times, marker='o', label="Selection")
 plt.plot(sizes, quick_times, marker='o', label="Quick")
 plt.plot(sizes, heap_times, marker='o', label="Heap")
 plt.plot(sizes, merge_times, marker='o', label="Merge")
-
+plt.plot(sizes, hybrid_times, marker='o', label="Hybrid")
 
 plt.xlabel("Array Size")
 plt.ylabel("Time (ms)")
