@@ -4,14 +4,14 @@ import random
 
 def quick_sort(A, l, h):
     if l < h:
-        m = partition(A, l, h)
+        m = random_partition(A, l, h)
         quick_sort(A, l, m - 1)
         quick_sort(A, m + 1, h)
 
 
 def random_partition(A, l, h):
     i = random.randint(l, h)   # b5tar random index
-    A[h], A[i] = A[i], A[h]    # bdl pivot with last element
+    A[h], A[i] = A[i], A[h]    # bdl pivot m3 last element
     return partition(A, l, h)
 
 

@@ -4,7 +4,7 @@ from bubble_sort import bubble_sort
 from selection_and_insertion import insertion_sort, selection_sort
 from sorting2 import quick_sort, heap_sort, merge_sort
 import matplotlib.pyplot as plt
-from hybrid_sort import hybrid_sort
+
 
 sizes = [1000,5000,10000,20000,30000]
 
@@ -15,7 +15,7 @@ bubble_times = []
 quick_times = []
 heap_times = []
 merge_times = []
-hybrid_times = []
+
 
 for size in sizes:
 
@@ -93,7 +93,6 @@ plt.plot(sizes, selection_times, marker='o', label="Selection")
 plt.plot(sizes, quick_times, marker='o', label="Quick")
 plt.plot(sizes, heap_times, marker='o', label="Heap")
 plt.plot(sizes, merge_times, marker='o', label="Merge")
-plt.plot(sizes, hybrid_times, marker='o', label="Hybrid")
 
 plt.xlabel("Array Size")
 plt.ylabel("Time (ms)")
