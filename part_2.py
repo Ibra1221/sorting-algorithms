@@ -5,9 +5,9 @@ from datetime import datetime
 
 hybrid_times = []
 sizes = [1000,5000,10000,20000,30000]
-arr = []
 
 for size in sizes:
+    arr = []
     for i in range(size):
         arr.append(random.randint(0,100000))
 
