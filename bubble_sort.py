@@ -9,5 +9,3 @@ def bubble_sort(arr):
                 arr[j+1] = temp
         if(changed == False):
             break
-
-    
